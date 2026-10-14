@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5546b8">
+  <title>Cloudora | Weather App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <!-- Top heading -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">☁</div>
+        <div>
+          <h1>Cloudora</h1>
+          <p>Your sky, simplified.</p>
+        </div>
+      </div>
+
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        LIVE
+      </div>
+    </header>
+
+    <!-- City search -->
+    <form class="search-bar" id="searchForm">
+      <span class="search-icon">⌕</span>
+
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Search city..."
+        autocomplete="off"
+        aria-label="Enter city name"
+      >
+
+      <button type="submit" id="searchButton">
+        <span id="searchButtonText">Search</span>
+      </button>
+    </form>
+
+    <p class="status-message" id="statusMessage" role="status">
+      Search for a city to explore its weather.
+    </p>
+
+    <!-- Main weather card -->
+    <section class="hero-card">
+      <div class="hero-glow"></div>
+
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">New Delhi</h2>
+          <p id="currentDate" class="date-text">Loading date...</p>
+        </div>
+
+        <div class="location-icon">⌖</div>
+      </div>
+
+      <div class="hero-weather">
+        <div class="main-weather-icon" id="mainWeatherIcon">☀️</div>
+
+        <div class="temperature-block">
+          <div class="temperature">
+            <span id="temperature">--</span><span class="degree">°</span>
+          </div>
+          <p id="weatherDescription">Waiting for weather...</p>
+          <p class="feels-like">
+            Feels like <span id="feelsLike">--</span>°
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-footer">
+        <div>
+          <span class="footer-icon">↑</span>
+          <span>High <strong id="todayHigh">--°</strong></span>
+        </div>
+
+        <div>
+          <span class="footer-icon">↓</span>
+          <span>Low <strong id="todayLow">--°</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weather details -->
+    <section class="details-section">
+      <div class="section-heading">
+        <div>
+          <h2>Today's Highlights</h2>
+          <p>Weather at a glance</p>
+        </div>
+        <span class="section-symbol">✦</span>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <div class="detail-top">
+            <span class="detail-icon">💧</span>
+            <span class="detail-label">Humidity</span>
+          </div>
+          <p class="detail-value">
+            <span id="humidity">--</span><small>%</small>
+          </p>
+          <p class="detail-note">Air moisture</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-top">
+            <span class="detail-icon">🌬️</span>
+            <span class="detail-label">Wind speed</span>
+          </div>
+          <p class="detail-value">
+            <span id="windSpeed">--</span><small> km/h</small>
+          </p>
+          <p class="detail-note">Air movement</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-top">
+            <span class="detail-icon">☁️</span>
+            <span class="detail-label">Cloud cover</span>
+          </div>
+          <p class="detail-value">
+            <span id="cloudCover">--</span><small>%</small>
+          </p>
+          <p class="detail-note">Sky coverage</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="detail-top">
+            <span class="detail-icon">🌧️</span>
+            <span class="detail-label">Rain today</span>
+          </div>
+          <p class="detail-value">
+            <span id="rainAmount">--</span><small> mm</small>
+          </p>
+          <p class="detail-note">Expected rainfall</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Hourly forecast -->
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <h2>Hourly Forecast</h2>
+          <p>Weather through the day</p>
+        </div>
+        <span class="forecast-tag">24 HOURS</span>
+      </div>
+
+      <div class="hourly-list" id="hourlyForecast">
+        <p class="empty-message">Hourly forecast will appear here.</p>
+      </div>
+    </section>
+
+    <!-- Five-day forecast -->
+    <section class="forecast-section weekly-section">
+      <div class="section-heading">
+        <div>
+          <h2>5-Day Forecast</h2>
+          <p>Plan your days ahead</p>
+        </div>
+        <span class="section-symbol">↗</span>
+      </div>
+
+      <div class="daily-list" id="dailyForecast">
+        <p class="empty-message">Daily forecast will appear here.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-cloud">☁</div>
+      <p>Made for your little moments.</p>
+      <small>Weather data by Open-Meteo</small>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
